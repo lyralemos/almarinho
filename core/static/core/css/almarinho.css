@@ -1,0 +1,158 @@
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+ 
+.clearfix {
+    display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+    display: block;
+}
+ 
+* html .clearfix {
+    height: 1%;
+}
+
+body{
+	background-color: #eee;
+	font-family: 'Cantarell', sans-serif;
+	padding:0;
+	margin:0;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Fjalla One', sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+a{
+	color:#777;
+	text-decoration: none;
+	border-bottom: 1px solid #777;
+}
+a:hover{
+	color:#ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+#header{
+	display: block;
+}
+#header .row{
+	background-color: #333;
+	color: #fff;
+	float: right;
+	text-align: center;
+	padding: 16px 13px;
+}
+#header h1, #header h3{
+	text-transform: none;
+	margin: 0;
+}
+#header h3{
+	font-family: 'Kreon', serif;
+}
+
+#header a{
+	color:#fff;
+	border: none;
+}
+
+#main{
+	margin: 0 auto;
+	max-width: 585px;
+	padding: 20px;
+}
+
+.entry{
+	margin-bottom: 25px;
+	padding-bottom: 25px;
+	border-bottom:1px solid #ddd;
+}
+.entry:last-child{
+	border-bottom: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+.entry h2{
+	font-size: 51px;
+	margin-top: 0;
+	margin-bottom:15px;
+}
+.entry h2 a{
+	color:#333;
+	border: none
+}
+.entry h2 a:hover{
+	color:#ccc;
+}
+.entry img{
+	border:10px solid #333;
+	max-width: 100%;
+	margin: 10px -10px;
+}
+
+.entry .count_comments{
+	float: right;
+}
+
+.text div{
+	padding-bottom: 20px;
+}
+
+.text pre{
+	border:1px dashed #ddd;
+	display:block;
+	padding: 10px;
+	background:#FAFAFA;
+	word-wrap:break-word;
+}
+
+
+footer{
+	color: #fff;
+	background-color: #333;
+	text-align: center;
+	padding: 22px 0;
+	margin-top: 22px;
+	width: 100%
+}
+
+#links{
+	list-style: none;
+	margin: 0 0 20px 0;
+	padding: 0;
+}
+#links li{
+	display: inline-block;
+}
+#links a{
+	display: block;
+	width: 34px;
+	height: 34px;
+	background-image: url('../images/social.png');
+	background-repeat: no-repeat;
+	text-indent: -99999px;
+	margin: 0 5px;
+	border: none
+}
+#links .facebook a{
+	background-position: -95px 0;
+}
+#links .twitter a{
+	background-position: -47px 0;	
+}
+#links .linkedin a{
+	background-position: -141px 0;
+}
+
+#by{
+	font-size: 12px;
+}

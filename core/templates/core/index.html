@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+
+{% block main %}
+	{% for entry in object_list %}
+	<div class="entry">
+		<h2>
+			<a href="{{ entry.get_absolute_url }}">{{ entry }}</a>
+		</h2>
+		{% if entry.data_publicacao %}
+			<span class="data">{{ entry.data_publicacao }}</span>
+		{% endif %}
+		<a class="count_comments" href="{{ entry.get_absolute_url }}#disqus_thread"></a>
+		{% if entry.imagem %}
+			<img src="{{ MEDIA_URL }}{{ entry.imagem }}" alt="{{ entry }}" />
+		{% endif %}
+		<div class="text">
+			{% autoescape off %}
+			{{ entry.texto|truncatewords_html:50 }}
+			{% endautoescape %}
+		</div>
+		{% if is_paginated %}
+			<div class="pagination">
+				{% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">Página anterior</a>
+                {% endif %}
+                <span class="page-current">
+                    {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Próxima página</a>
+                {% endif %}
+			</div>
+		{% endif %}
+	</div>
+	{% endfor %}
+{% endblock %}
