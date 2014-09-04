@@ -152,6 +152,9 @@ footer{
 #links .linkedin a{
 	background-position: -141px 0;
 }
+#links .rss a{
+	background-position: -189px 0;
+}
 
 #by{
 	font-size: 12px;
