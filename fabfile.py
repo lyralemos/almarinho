@@ -1,13 +1,15 @@
-from fabric.api import local, settings, abort, run, cd
+from fabric.api import local, run, cd, sudo, env
 from fabric.contrib.console import confirm
+
+env.hosts = ['almarinho.com.br']
+env.user = 'almarinho'
 
 def prepare_deploy():
     local("git add --all && git commit")
     local("git push")
 
 def deploy():
-    prepare_deploy()
     code_dir = '/home/almarinho/almarinho'
     with cd(code_dir):
-        run('su - almarinho -c "git pull"')
-        run("supervisorctl restart almarinho")
+        run("git pull")
+        sudo("supervisorctl restart almarinho")
