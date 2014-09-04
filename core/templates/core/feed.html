@@ -1,0 +1,7 @@
+{% if obj.imagem %}
+<img src="{{ MEDIA_URL }}{{ obj.imagem }}" />
+{% endif %}
+
+{% autoescape off %}
+{{ obj.texto }}
+{% endautoescape %}
