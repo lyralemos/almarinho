@@ -10,7 +10,7 @@ class LatestEntriesFeed(Feed):
     description_template = "core/feed.html"
 
     def items(self):
-        return Entry.objects.order_by('-data_publicacao')[:5]
+        return Entry.objects.filter(status='published').order_by('-data_publicacao')[:5]
 
     def item_title(self, item):
         return item.titulo
