@@ -112,7 +112,7 @@ a:hover{
 	display:block;
 	padding: 10px;
 	background:#FAFAFA;
-	overflow: scroll;
+	overflow: auto;
 }
 
 
